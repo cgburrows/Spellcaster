@@ -34,10 +34,12 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-# Unity store packages#
+# Unity store packages
 
-/Airsig
-/Mega Fantasy Props Pack
+/Assets/Airsig
+/Assets/Mega Fantasy Props Pack
+/Assets/MagicArsenal
+/Assets/magic idol
 
 
 

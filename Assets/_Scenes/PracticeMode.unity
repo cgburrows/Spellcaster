@@ -499,7 +499,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1491773275
+--- !u!43 &1335368591
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -677,39 +677,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1599985639}
   m_Script: {fileID: 11500000, guid: 46964b142a8b343b3919fa771e2f7294, type: 3}
---- !u!21 &1713385324
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1760919660
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +763,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1761956583
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1804296275 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1891404858972012, guid: 7226acbe0dc127a4d98a8c907d50779f,
@@ -813,8 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerButtonDown: 0
-  spellPrefab: {fileID: 54901087929738580, guid: db752b0de1d2f754ebfefcfb394f2777,
-    type: 2}
+  spellPrefab: {fileID: 5400000, guid: 85189cce24e80d841a5e5e7944bdd238, type: 2}
   firePosition: {fileID: 226936493}
 --- !u!4 &1804296278 stripped
 Transform:
@@ -864,12 +863,12 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1713385324}
+      objectReference: {fileID: 1761956583}
     - target: {fileID: 33696970103271458, guid: 7226acbe0dc127a4d98a8c907d50779f,
         type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1491773275}
+      objectReference: {fileID: 1335368591}
     - target: {fileID: 4804317134739630, guid: 7226acbe0dc127a4d98a8c907d50779f, type: 2}
       propertyPath: m_RootOrder
       value: 1
@@ -909,6 +908,16 @@ Prefab:
     - target: {fileID: 4804317134739630, guid: 7226acbe0dc127a4d98a8c907d50779f, type: 2}
       propertyPath: m_LocalScale.x
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 198441560904458582, guid: 7226acbe0dc127a4d98a8c907d50779f,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198441560904458582, guid: 7226acbe0dc127a4d98a8c907d50779f,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1493950650
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7226acbe0dc127a4d98a8c907d50779f, type: 2}
