@@ -4,7 +4,8 @@ using UnityEngine;
 
 using AirSig;
 
-public class HandleGesture : MonoBehaviour {
+public class HandleGesture : MonoBehaviour
+{
 
     // Callback for receiving signature/gesture progression or identification results
     AirSigManager.OnDeveloperDefinedMatch developerDefined;
@@ -23,7 +24,11 @@ public class HandleGesture : MonoBehaviour {
     // score - the confidence level of this identification. Above 1 is generally considered a match
     void HandleOnDeveloperDefinedMatch(long gestureId, string gesture, float score)
     {
-        // put handle behavior here
+        if (gesture != null && score >= 1)
+        {
+            rightHandControl.GetComponent<ControllerManager>().Fire();
+
+        }
     }
 
     private void Awake()
@@ -46,9 +51,10 @@ public class HandleGesture : MonoBehaviour {
         // Unregistering callback
         airsigManager.onDeveloperDefinedMatch -= developerDefined;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (-1 != (int)rightHandControl.index)
         {
             var device = SteamVR_Controller.Input((int)rightHandControl.index);

@@ -24,25 +24,12 @@ public class ControllerManager : MonoBehaviour
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
-    void Update()
+    public void Fire()
     {
-
-        if (controller == null)
-        {
-            Debug.Log("Controller not initialized");
-
-            return;
-        }
-
-        triggerButtonDown = controller.GetPressDown(triggerButton);
-
-        if (triggerButtonDown)
-        {
-            Debug.Log("Fire");
-            Rigidbody spellInstance;
-            spellInstance = Instantiate(spellPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
-            spellInstance.AddForce(firePosition.forward * 2000);
-        }
+        Debug.Log("Fire");
+        Rigidbody spellInstance;
+        spellInstance = Instantiate(spellPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
+        spellInstance.AddForce(firePosition.forward * 2000);
     }
 }
 
