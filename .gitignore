@@ -33,3 +33,14 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Unity store packages#
+
+/Airsig
+/Mega Fantasy Props Pack
+
+
+
+
+
+
