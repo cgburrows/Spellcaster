@@ -50,7 +50,7 @@ public class ControllerManager : MonoBehaviour
             if (timeLeft < 0)
             {
                 casting = false;
-                airsigManager.SetMode(AirSigManager.Mode.DeveloperDefined);
+                //airsigManager.SetMode(AirSigManager.Mode.DeveloperDefined);
             }
         }
     }
