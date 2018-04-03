@@ -7,6 +7,10 @@ public class ControllerManager : MonoBehaviour
     public Rigidbody spellPrefab;
     public Transform firePosition;
 
+    public float timeLeft;
+
+    public bool casting;
+
     private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
     private SteamVR_Controller.Device controller
     {
@@ -22,7 +26,9 @@ public class ControllerManager : MonoBehaviour
     void Start()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
+        casting = false;
     }
+
 
     public void Fire()
     {
@@ -30,6 +36,18 @@ public class ControllerManager : MonoBehaviour
         Rigidbody spellInstance;
         spellInstance = Instantiate(spellPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
         spellInstance.AddForce(firePosition.forward * 2000);
+    }
+
+    private void Update()
+    {
+        if (casting == true)
+        {
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+            {
+                casting = false;
+            }
+        }
     }
 }
 

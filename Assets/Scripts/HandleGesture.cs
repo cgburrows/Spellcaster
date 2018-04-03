@@ -10,13 +10,17 @@ public class HandleGesture : MonoBehaviour
     // Callback for receiving signature/gesture progression or identification results
     AirSigManager.OnDeveloperDefinedMatch developerDefined;
 
+    // particles to be drawn with during gesture recognition
+    public ParticleSystem track;
+
     // Reference to AirSigManager for setting operation mode and registering listener
     public AirSigManager airsigManager;
 
     public SteamVR_TrackedObject rightHandControl;
 
-    // particles to be drawn with during gesture recognition
-    public ParticleSystem track;
+    private ControllerManager controllerManager;
+
+    private string lastMatchedGesture;
 
     // Handling developer defined gesture match callback - This is invoked when the Mode is set to Mode.DeveloperDefined and a gesture is recorded.
     // gestureId - a serial number
@@ -26,13 +30,16 @@ public class HandleGesture : MonoBehaviour
     {
         if (gesture != null && score >= 1)
         {
-            rightHandControl.GetComponent<ControllerManager>().Fire();
-
+            lastMatchedGesture = gesture;
+            controllerManager.timeLeft = 6.0f;
+            controllerManager.casting = true;
         }
     }
 
     private void Awake()
     {
+        controllerManager = rightHandControl.GetComponent<ControllerManager>();
+
         developerDefined = new AirSigManager.OnDeveloperDefinedMatch(HandleOnDeveloperDefinedMatch);
         airsigManager.onDeveloperDefinedMatch += developerDefined;
         airsigManager.SetMode(AirSigManager.Mode.DeveloperDefined);
@@ -55,7 +62,7 @@ public class HandleGesture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (-1 != (int)rightHandControl.index)
+        if ((!controllerManager.casting) && (-1 != (int)rightHandControl.index))
         {
             var device = SteamVR_Controller.Input((int)rightHandControl.index);
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
@@ -66,6 +73,14 @@ public class HandleGesture : MonoBehaviour
             {
                 track.Stop();
                 track.Clear();
+            }
+        }
+        else if (controllerManager.casting)
+        {
+            var device = SteamVR_Controller.Input((int)rightHandControl.index);
+            if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+            {
+                controllerManager.Fire();
             }
         }
     }
