@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using AirSig;
+
 public class ControllerManager : MonoBehaviour
 {
     public bool triggerButtonDown = false;
@@ -10,6 +12,8 @@ public class ControllerManager : MonoBehaviour
     public float timeLeft;
 
     public bool casting;
+
+    public AirSigManager airsigManager;
 
     private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
     private SteamVR_Controller.Device controller
@@ -46,6 +50,7 @@ public class ControllerManager : MonoBehaviour
             if (timeLeft < 0)
             {
                 casting = false;
+                airsigManager.SetMode(AirSigManager.Mode.DeveloperDefined);
             }
         }
     }

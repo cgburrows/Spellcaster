@@ -33,6 +33,7 @@ public class HandleGesture : MonoBehaviour
             lastMatchedGesture = gesture;
             controllerManager.timeLeft = 6.0f;
             controllerManager.casting = true;
+            airsigManager.SetMode(AirSigManager.Mode.None);
         }
     }
 
@@ -53,7 +54,7 @@ public class HandleGesture : MonoBehaviour
 
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         // Unregistering callback
         airsigManager.onDeveloperDefinedMatch -= developerDefined;
