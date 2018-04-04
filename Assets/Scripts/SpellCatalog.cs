@@ -1,14 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SpellCatalogue : MonoBehaviour
 {
-    public void FireBeam(GameObject lineRendererPrefab, Transform firePosition)
+    public void FireBeam(GameObject beamLineRendererPrefab, Transform beamStartPosition, Vector3 beamEndPosition)
     {
-        LineRenderer line;
+        GameObject beam = null;
 
-        line = Instantiate;
+        if (Input.GetMouseButtonDown(0))
+        {
+            beam = Instantiate(beamLineRendererPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            Destroy(beam);
+        }
     }
 
     public void FireMissile(Rigidbody spellPrefab, Transform firePosition)
