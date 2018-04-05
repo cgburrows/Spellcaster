@@ -99,7 +99,7 @@ public class MagicBeam2 : MonoBehaviour
         textureScrollSpeed = scrollSpeedSlider.value;
     }
 
-    void ShootBeamInDir(Vector3 start, Vector3 dir)
+    public void ShootBeamInDir(Vector3 start, Vector3 dir)
     {
         line.positionCount = 2;
         line.SetPosition(0, start);

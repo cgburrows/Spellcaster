@@ -11,7 +11,9 @@ public class ArcaneSchool : MonoBehaviour
     public float missileDPS;
 
     [Header("Beam Spell")]
-    public GameObject beam;
+    public GameObject beamLineRendererPrefab;
+    public GameObject beamStartPrefab;
+    public GameObject beamEndPrefab;
     public float beamDPS;
 
     [Header("Cleave Spell")]
