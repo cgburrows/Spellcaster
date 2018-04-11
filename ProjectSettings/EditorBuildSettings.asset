@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/PracticHall.unity
+    guid: dcc3bcc2595b11e47a5cfb585d5a398c
+  - enabled: 0
+    path: Assets/_Scenes/HallWithBook.unity
+    guid: c09adfbbc75285e4bb03f25cc899c8a6
