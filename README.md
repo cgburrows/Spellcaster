@@ -25,9 +25,9 @@ Our program uses AirSig to track user's gestures. When the user pulls down the t
 
 The spells themselves were written to be as modular as possible so that we could apply them to different schools or pass them different particle and sound effects as needed. Some spells are unique to their school, but most follow a standard procedure:
 
-> Check for a developer defined gesture match
-> Instantiate a new particle effect at the target's or the user's position
-> Play a sound effect.
+> 1. Check for a developer defined gesture match  
+> 2. Instantiate a new particle effect at the target's or the user's position  
+> 3. Play a sound effect  
 
 Most spells are intentionally left in this format to make switching effects easier.
 
