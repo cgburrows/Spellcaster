@@ -41,9 +41,9 @@ Frost:
 
 Gesture | Spell | Description
 --- | --- | ---
-BOTRN|Glacial Impact(Create a fissure along the ground that ends with an icy eruption.
-DOWN|Freeze Dry	(Eliminates all moisture around the target and freezes them, causing your next spell to deal bonus damage
-BEAM|Icicle Crash	(A sharp, cold spell that shreds everything in its way. A blizzard in the palm of your hand!
+BOTRN|Glacial Impact|Create a fissure along the ground that ends with an icy eruption.
+DOWN|Freeze Dry|Eliminates all moisture around the target and freezes them, causing your next spell to deal bonus damage
+BEAM|Icicle Crash|A sharp, cold spell that shreds everything in its way. A blizzard in the palm of your hand!
 
 Light:  
 
