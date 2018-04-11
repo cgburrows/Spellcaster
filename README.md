@@ -85,6 +85,10 @@ BEAM|Gale Force|Overwhelm everything in front of you with a jet of fierce winds 
 ## Asset Packs
 
 **Power Books** was an asset that did not pan out. It worked nearly flawlessly, we had a working book with all the information inside of it. The problem with it was the package did not have a way to manipulate the book within VR, it had options for touchscreen, keyboard, mouse, and UI inputs.  We attempted to create code that would utilize the Vive controller inputs as a manipulator, and based it on the 'keyboard controller' script (which manipulated the book via keyboard input).  In the end the script wasn't completed and we created posters to help the user through the spellcasting experience.  
+
+**Mega Fantasy Props Pack** Was used as a stepping stone for a lot of ideas.  In the end it was only used for a desk and a candle in the corner to add atmosphere.
+
+**
 Unity Asset Store: [Power Books](https://assetstore.unity.com/packages/3d/props/interior/power-books-95500 "Power Books - Asset Store]")
 
 Note: You do not need any of these assets to run the game, only to correctly view the build in Unity.
