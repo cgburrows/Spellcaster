@@ -89,6 +89,8 @@ BEAM|Gale Force|Overwhelm everything in front of you with a jet of fierce winds 
 **Mega Fantasy Props Pack** Was used as a stepping stone for a lot of ideas.  In the end it was only used for a desk and a candle in the corner to add atmosphere.
 
 **Magic Arsenal** Arguably the most important pack in the code, magic arsenal had all of the spell effects and a lot of the environement in it.  The level of customization it allowed was a great fit with what we planned to do with it.
+
+**Training Targets Volume 2** This pack had a fun scarecrow that we used as a target in our final build of the simulation.
 Unity Asset Store: [Power Books](https://assetstore.unity.com/packages/3d/props/interior/power-books-95500 "Power Books - Asset Store]")
 
 Note: You do not need any of these assets to run the game, only to correctly view the build in Unity.
