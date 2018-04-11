@@ -2,6 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/*
+    MagicBeam2 is an outdated script that was used to test the FireBeam() function that now exists in all other schools.
+    Every school now includes three slots for beam prefabs: A start effect, a line renderer, and an impact effect. This
+    script combines the three into one particle effect that is called by instantiating them at the same time. The beam
+    itself is directioned by a raycast that fires from a "spell spawner" at the tip of the wand that ends at the nearest
+    object with a collider. The texture is then drawn onto the raycast and is animated to scroll in a loop along the
+    line render to make it look less like a laser pointer and more like a powerful magic spell.    
+*/
+
 public class MagicBeam2 : MonoBehaviour
 {
 
@@ -22,7 +31,7 @@ public class MagicBeam2 : MonoBehaviour
 
     private SteamVR_TrackedObject trackedObj;
 
-    [Header("Prefabs")]
+    [Header("Prefabs/Effects")]
     public GameObject beamLineRendererPrefab;
     public GameObject beamStartPrefab;
     public GameObject beamEndPrefab;
@@ -61,6 +70,7 @@ public class MagicBeam2 : MonoBehaviour
         triggerButtonUp = controller.GetPressUp(triggerButton);
         triggerButtonPressed = controller.GetPress(triggerButton);
 
+        // Instantiate all parts of the beam at the same time and set them up to be rotated
         if (triggerButtonDown)
         {
             beamStart = Instantiate(beamStartPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
@@ -68,6 +78,8 @@ public class MagicBeam2 : MonoBehaviour
             beam = Instantiate(beamLineRendererPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
             line = beam.GetComponent<LineRenderer>();
         }
+
+        // Destroy the beam on trigger up
         if (triggerButtonUp)
         {
             Destroy(beamStart);
@@ -75,12 +87,11 @@ public class MagicBeam2 : MonoBehaviour
             Destroy(beam);
         }
 
+        // While the trigger is held down, transform the beam towards where the user is pointing
         if (triggerButtonPressed)
         {
-            //int layerMask = 1 << 8;
             RaycastHit _hit;
 
-            //if (Physics.Raycast(transform.position, transform.forward * 10, out _hit, 10.0f, layerMask))
             if (Physics.Raycast(firePosition.position, transform.forward, out _hit))
             {
                 Vector3 tdir = _hit.point - firePosition.position;
@@ -99,6 +110,7 @@ public class MagicBeam2 : MonoBehaviour
         textureScrollSpeed = scrollSpeedSlider.value;
     }
 
+    // This function controls the two vectors (beam start and beam end) that track the user's aiming
     public void ShootBeamInDir(Vector3 start, Vector3 dir)
     {
         line.positionCount = 2;

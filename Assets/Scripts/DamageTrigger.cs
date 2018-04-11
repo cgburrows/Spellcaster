@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    The damage trigger was supposed to control how the dummy took damage. In this game, your opponent does not have a
+    "health bar," but rather just keeps track of all the damage done to it. The dummy can also be resistant to certain
+    kinds of magic, and weak to others. The dummy's resistances alter how much damage it takes. While incomplete, we
+    found what we think is an interesting and more effective way to handle damage. Read the "formula for magical
+    resistances" below for more details.  
+*/
+
 public class DamageTrigger : MonoBehaviour
 {
 
@@ -79,23 +87,19 @@ public class DamageTrigger : MonoBehaviour
 
     void Start()
     {
+        // zero all numbers to correctly apply future damage
         totalDPS = 0;
         lastHitDPS = 0;
     }
 
-    public void passDamage(int damage)
+    public void passDamage()
     {
-
+        // get damage from any spell that hit the dummy
     }
 
     public void applyCurse(int strength, int resistance)
     {
-
-    }
-
-    public void breakCure(int resistance)
-    {
-
+        // if the dummy is cursed, the damage of the next spell should deal more damage
     }
 
     void calcDamage()
@@ -107,7 +111,8 @@ public class DamageTrigger : MonoBehaviour
 
     void Update()
     {
-        totalDPS = lastHitDPS + totalDPS;
-
+        lastHitDPS = passDamage(); // Get the most recent spell damage
+        lastHitDPS = ResistDamage(lastHitDPS); // let the dummy resist/succumb to damage
+        calcDamage(lastHitDPS); // record the damage
     }
 }

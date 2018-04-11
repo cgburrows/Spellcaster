@@ -5,6 +5,25 @@ using UnityEngine.UI;
 
 using AirSig;
 
+/*
+    Spell School: Arcane
+
+    General Info: This is one of the "spell school" scripts. It houses a streamlined version of the MagicBeam2 script as well as
+                  custom spells written specifically for this school. Spell school scripts are very modular and allow us to
+                  change things like damage, particle effects, and sound effects without having to edit much. Every school is
+                  capable of firing a beam, and the object that the script is attached to is passed to the SelectionWheel for
+                  easy school switching.
+
+                  The most important part of these scripts is the gesture handler. AirSig provides some tools to help us track
+                  gestures, and in order to make gesture tracking more accurate we created six different handlers to improve
+                  the algorithm's confidence in differentiating our custom gestures. As shown in HandleOnDeveloperDefinedMatch()
+                  we only use two gestures per school to make it even more accurate
+
+    Special Cases: Slow Time: This spell alters the time scale to allow the user to perform more difficult combos.
+
+    For more info on the magic beam, see MagicBeam2.cs.
+*/
+
 public class ArcaneSchool : MonoBehaviour
 {
     [Header("Missile Spell")]
@@ -81,6 +100,9 @@ public class ArcaneSchool : MonoBehaviour
     {
         if (score >= 1)
         {
+            // This is where the script checks for maching gestures. The score how close the user's gesture is to our definition.
+            // If the score is too low it does not match even if the algorithm finds a matching spell. This is so the program
+            // does not randomly cast spells on scribbles or accidental casts.
             if ((gesture == "TRIANGLE") && score >= 0.9f)
             {
                 lastMatchedGesture = gesture;

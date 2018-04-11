@@ -3,11 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    This is the script for the Selection Wheel that is attached to the controller. It splits the controller touchpad
+    into six equal "slices" that, when clicked on, will swap the user's current spell school to the desired element.
+
+    We also use a special function to find out where the user's thumb is on the touchpad, and show/hide the wheel
+    depending on if the user has their thumb on the touchpad.
+
+    The game objects are the actual game objects that house the spells and gestures.
+*/
+
 public class SelectionWheel : MonoBehaviour
 {
     private SteamVR_TrackedController rightController;
     private SteamVR_TrackedObject trackedObject;
-    //private SteamVR_Controller.Device device;
 
     // keep track of the current school so it can be disabled when another is enabled
     private GameObject CurrentSchool;
@@ -36,11 +45,12 @@ public class SelectionWheel : MonoBehaviour
         rightController.PadUntouched += HandlePadUntouched;
     }
 
+    // These two functions make the wheel visible or invisible depending on if the user has their
+    // thumb on the touchpad
     private void HandlePadUntouched(object sender, ClickedEventArgs e)
     {
         SelectionWheel1.SetActive(false);
     }
-
     private void HandlePadTouched(object sender, ClickedEventArgs e)
     {
         SelectionWheel1.SetActive(true);
@@ -48,6 +58,7 @@ public class SelectionWheel : MonoBehaviour
 
     private void HandlePadClicked(object sender, ClickedEventArgs e)
     {
+        // Here is the math that assigns each school to a wheel slice:
         if (e.padX != 0 || e.padY != 0)
         {
             float degree = FindDegree(e.padX, e.padY);
