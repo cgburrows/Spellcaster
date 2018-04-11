@@ -19,7 +19,7 @@ Each school has three spells available: The grip-activated beam spell as well as
 [poster]: https://i.imgur.com/L74SpXD.png "Poster displayed on the OC"
 
 ## Implementation
-Please see [Assets/Scripts/](../Assets/Scripts) for detailed documentation.
+Please see [master/Assets/Scripts](../Assets/Scripts) for detailed documentation.
 
 Our program uses AirSig to track user's gestures. When the user pulls down the trigger to record a spell, the AirSig algorithm finds the closest match and runs the corresponding spell we assigned to each gesture. Since there are six schools and we were worried about gesture matching accuracy, every school has it's own gesture manager and a limited number of gestures to check against. To make switching schools easy, we set up the Vive controller touchpads to display a map of where the user needs to click to get to that school.
 
