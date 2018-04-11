@@ -20,6 +20,55 @@ Each school has three spells available: The grip-activated beam spell as well as
 
 ## Implementation
 
+## Spells
+Arcane:
+
+Gesture | Spell | Description
+--- | --- | ---
+TRIANGLE | Magic Missile | Fire a simple yet powerful blast of magical energy.
+HOURGLASS | Slow Time| Everything around you moves at half speed for a short time.
+BEAM | Magic Beam | Conjure a stream of pure magical energy from your wand.
+
+Fire:  
+
+Gesture | Spell | Description
+--- | --- | ---
+CLOSEDX|Ignite|Create an alchemical reaction at your target's location to set them ablaze.
+C	|Fireball|Purge with fire! Sends a bolt of flame in any direction.
+BEAM|Flamethrower|Summon a jet of powerful flames to char anything in its path.
+
+Frost:  
+
+Gesture | Spell | Description
+--- | --- | ---
+BOTRN|Glacial Impact(Create a fissure along the ground that ends with an icy eruption.
+DOWN|Freeze Dry	(Eliminates all moisture around the target and freezes them, causing your next spell to deal bonus damage
+BEAM|Icicle Crash	(A sharp, cold spell that shreds everything in its way. A blizzard in the palm of your hand!
+
+Light:  
+
+Gesture | Spell | Description
+--- | --- | ---
+C|Illuminate|Command the very light around you to boost the power of your other spells.
+BOW|Lightbringer|Summon the Final Spark to seek out and purify your foes.
+BEAM|Photonic Ray|Dazzle everyone in front of you with a display of pure chromatic power.
+
+Nature:  
+
+Gesture | Spell | Description
+--- | --- | ---
+SNAKE|Sidewinder|Send a wave of natural energy along the ground that will also poison your enemy.
+HEART|BLOOM!|Mark your target with the Rootcaller's Hex. Fire and Light spells deal increased to Hexed targets.
+BEAM|Dragon's Pulse|A beam of mixed macical energy that deals half of its damage as a random school.
+
+Storm:  
+
+Gesture | Spell | Description
+--- | --- | ---
+LIGHTNING|Call Lightning|Call forth a bolt of the most powerful magic that the storms have to offer.
+CLEAVE|Hurricane|Cast forth wheels of enchanted clouds that deal massive damage to anything they touch.
+BEAM|Gale Force|Overwhelm everything in front of you with a jet of fierce winds and icy water.
+
 ## Asset Packs
 
 **Power Books** was an asset that did not pan out. It worked nearly flawlessly, we had a working book with all the information inside of it. The problem with it was the package did not have a way to manipulate the book within VR, it had options for touchscreen, keyboard, mouse, and UI inputs.  We attempted to create code that would utilize the Vive controller inputs as a manipulator, and based it on the 'keyboard controller' script (which manipulated the book via keyboard input).  In the end the script wasn't completed and we created posters to help the user through the spellcasting experience.  
