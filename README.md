@@ -19,6 +19,19 @@ Each school has three spells available: The grip-activated beam spell as well as
 [poster]: https://i.imgur.com/L74SpXD.png "Poster displayed on the OC"
 
 ## Implementation
+Please see [Assets/Scripts/](../Assets/Scripts) for detailed documentation.
+
+Our program uses AirSig to track user's gestures. When the user pulls down the trigger to record a spell, the AirSig algorithm finds the closest match and runs the corresponding spell we assigned to each gesture. Since there are six schools and we were worried about gesture matching accuracy, every school has it's own gesture manager and a limited number of gestures to check against. To make switching schools easy, we set up the Vive controller touchpads to display a map of where the user needs to click to get to that school.
+
+The spells themselves were written to be as modular as possible so that we could apply them to different schools or pass them different particle and sound effects as needed. Some spells are unique to their school, but most follow a standard procedure:
+
+> Check for a developer defined gesture match
+> Instantiate a new particle effect at the target's or the user's position
+> Play a sound effect.
+
+Most spells are intentionally left in this format to make switching effects easier.
+
+Eight of the eleven gestures used in the game we had to design ourselves, and we asked people with different levels of VR experience to help us record them. We set up our Vive in our residence hall in a way that didn't require people to put on the headset to record and asked them to perform small, medium, and large versions of our gestures at slow, medium, fast, and "excited" speeds. AirSig only required 81 gesture samples to train the algorithm on, but in some cases we provided over 200 samples.
 
 ## Spells
 Arcane:
