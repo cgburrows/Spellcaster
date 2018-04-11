@@ -11,6 +11,7 @@ Once SteamVR and Spellcaster are running, put on your headset and pick up your r
 Each school has three spells available: The grip-activated beam spell as well as two spells unique to that school that require you to "cast" them by drawing a symbol in the air before they activate. Posters to the left of the spawn area detail all of your available spells and the gesture required to cast them. To start casting, hold down the trigger on the right controller and follow the gesture that corresponds to the spell you want to cast. Start with the controller in the approximate location of the open circle on the gesture diagram, and follow the line to the arrow at the end. Note that every gesture is one solid line and does not require youo let go of the trigger until the end. Once you have completed the gesture, some spells require you to pull the trigger a second time to activate its effect. Try not to switch schools while casting spells, as this may result in VFX objects not despawning which requires a game restart to fix.
 
 ## Video demonstration
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=2Tr5sjjO_sk&" target="_blank"><img src="http://img.youtube.com/vi/2Tr5sjjO_sk&/0.jpg" alt="Watch a demonstration of Spellcaster here." width="240" height="180" border="10"/></a>
 
 ## Poster
 ![alt text][poster]
