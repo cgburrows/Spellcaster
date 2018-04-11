@@ -2,7 +2,7 @@
 Crazy Wiz-Biz in VR
 
 ## Setting Up SteamVR
-This experience requires an HTC Vive, SteamVR, and a VR capable computer. Please follow the official setup instructions on the Steam Support website to maximize compatability:
+This experience requires an HTC Vive, SteamVR, and a VR capable computer. Please follow the official setup instructions on the Steam Support website to maximize compatability:  
 https://support.steampowered.com/steamvr/HTC_Vive/
 
 ## Instructions
