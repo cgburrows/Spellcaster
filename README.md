@@ -21,8 +21,7 @@ Each school has three spells available: The grip-activated beam spell as well as
 
 ## Asset Packs
 
-**Powerbooks** was an asset that did not pan out. It worked nearly flawlessly, we had a working book with all the information inside of it. The problem with it was the package did not have a way to manipulate the book within VR, it had options for touchscreen, keyboard, mouse, and UI inputs.  We attempted to create code that would utilize the Vive controller inputs as a manipulator, and based it on the 'keyboard controller' script (which manipulated the book via keyboard input).  In the end the script wasn't completed and we created posters to help the user through the spellcasting experience.
-
+**Powerbooks** was an asset that did not pan out. It worked nearly flawlessly, we had a working book with all the information inside of it. The problem with it was the package did not have a way to manipulate the book within VR, it had options for touchscreen, keyboard, mouse, and UI inputs.  We attempted to create code that would utilize the Vive controller inputs as a manipulator, and based it on the 'keyboard controller' script (which manipulated the book via keyboard input).  In the end the script wasn't completed and we created posters to help the user through the spellcasting experience.  
 Unity Asset Store: [Power Books](https://assetstore.unity.com/packages/3d/props/interior/power-books-95500 "Power Books - Asset Store]")
 
 Note: You do not need any of these assets to run the game, only to correctly view the build in Unity.
